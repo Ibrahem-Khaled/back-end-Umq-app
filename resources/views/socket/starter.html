@@ -1,0 +1,34 @@
+<html>
+
+    <head>
+        <title>Simple Page</title>                                     
+    </head>
+
+<body  >
+    <h1>Hello h1</h1>
+
+    <p id="demo">demo data</p>
+         
+    
+    <script>
+    
+    function sleep(ms) {
+       return new Promise(resolve => setTimeout(resolve, ms));
+    }
+   
+   async function demo() {
+       for (let i = 0; i < 5; i++) {
+        document.getElementById("demo").innerHTML = `Waiting ${i} seconds...`;
+          console.log(`Waiting ${i} seconds...`);
+           await sleep(i * 1000);
+       }
+       console.log('Done');
+   }
+   
+   console.log('start');
+
+   demo();
+  </script> 
+
+</body>
+</html>
